@@ -1,0 +1,176 @@
+html{
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Public sans', sans-serif;
+    font-size: $font-sm;
+    font-weight: 300;
+    color: $grayishBlue;
+    line-height: 1.3;
+    overflow-x: hidden;
+
+    @include breakpoint-up(large){
+        font-size: $font-md;
+    }
+
+    &.noscroll{
+        overflow: hidden;
+    }
+}
+
+// Text
+
+h1, h2, h3{
+    margin-top: 0;
+    font-weight: 300;
+    line-height: 1.15;
+    color: $darkBlue;
+}
+
+h1{
+    font-size: 2.31rem;
+    margin-bottom: 1.5rem;
+
+    @include breakpoint-up(large){
+        font-size: $font-xl;
+    }
+}
+
+h2{
+    font-size: 1.875rem;
+    margin-bottom: 1.5625rem;
+
+    @include breakpoint-up(large){
+        font-size: 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+
+}
+
+p{
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
+}
+
+
+a, a:visited, a:hover{
+    text-decoration: none;  
+}
+
+// Spacing
+.container{
+    max-width: 69.375rem;
+    margin: 0 auto;
+
+    &--pall{
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+
+    &--py{
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+        
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+
+    &--px{
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+    }
+
+    &--pt{
+        padding-top: 4.375rem;
+        
+        @include breakpoint-up(large){
+            padding-top: 6rem;
+        }
+    }
+
+    &--pb{
+        padding-bottom: 4.375rem;
+        
+        @include breakpoint-up(large){
+            padding-bottom: 6rem;
+        }
+    }
+
+    &--pr{
+        padding-right: 1.5rem;
+    }
+
+    &--pl{
+        padding-left: 1.5rem;
+    }
+
+}
+
+// Flexbox
+.flex{
+    display: flex;
+
+    &-jc-sb{
+        justify-content: space-between;
+    }
+
+    &-jc-c{
+        justify-content: center;
+    }
+
+    &-ai-c{
+        align-items: center;
+    }
+}
+
+// Buttons
+.button{
+    display: inline-block;
+    padding: 0.875rem 1.875rem;
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    border: 0;
+    border-radius: 50px;
+    cursor: pointer;
+    color: $white;
+    font-weight: 400;
+    font-size: $font-sm;
+    transition: opacity 300ms ease-in-out;
+
+    &:hover{
+        opacity: 0.75;
+    }
+
+}
+
+// Visibility
+
+.hide-for-mobile{
+    // hide for tablet and mobile devices
+    @include breakpoint-down(medium){
+        display: none;
+    }
+}
+
+.hide-for-desktop{
+    // hide for desktop viewport widths
+    @include breakpoint-up(large){
+        display: none;
+    }
+}
